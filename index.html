@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peddy</title>
+
+    <!-- Daisy UI CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Font awesome cdn -->
+    <script
+      src="https://kit.fontawesome.com/ca6929ffbd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- Header Section with Navbar -->
+    <header class="bg-base-100 py-4">
+      <!-- Navbar -->
+      <nav class="navbar container mx-auto px-">
+        <!-- Left Section: Logo -->
+        <div class="flex-1">
+          <a href="#" class="flex items-center text-2xl font-bold">
+            <span class="text-teal-600 mr-2"
+              ><img src="images/logo.webp" alt=""
+            /></span>
+            Peddy
+          </a>
+        </div>
+
+        <!-- Hamburger Menu for Mobile -->
+        <div class="lg:hidden">
+          <input type="checkbox" id="menu-toggle" class="hidden peer" />
+          <label
+            for="menu-toggle"
+            class="btn btn-circle btn-outline cursor-pointer"
+          >
+            <i class="fa-solid fa-bars text-2xl"></i>
+          </label>
+        </div>
+
+        <!-- Center Section: Links -->
+        <div class="hidden lg:flex">
+          <ul class="menu menu-horizontal p-0 space-x-6">
+            <li>
+              <a class="font-medium text-gray-600 hover:text-black">Home</a>
+            </li>
+            <li>
+              <a class="font-medium text-gray-600 hover:text-black">Shop</a>
+            </li>
+            <li>
+              <a class="font-medium text-gray-600 hover:text-black">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Right Section: User Icon -->
+        <div class="flex-1 flex justify-end">
+          <button class="btn btn-circle btn-outline">
+            <i class="fa-regular fa-user text-2xl"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- Header Content -->
+      <div class="text-center mt-8 px-6">
+        <h2 class="text-2xl font-semibold text-gray-500">
+          Bringing Families Together ❤️
+        </h2>
+        <h1 class="text-6xl font-bold my-4">
+          Your Path to Adoption <br />
+          Starts Here
+        </h1>
+        <p class="text-black mb-6">
+          It's a well-known fact that readers are often distracted by a page's
+          layout, as the visual arrangement draws more attention <br />
+          than the actual content,causing them to focus on the design instead of
+          the message.
+        </p>
+        <a href="#" class="btn bg-teal-600 px-6 text-white">View More</a>
+      </div>
+      <div>
+        <img src="images/pet.webp" alt="" class="w-[800px] mx-auto py-10" />
+      </div>
+    </header>
+    <!-- Adopt  Your  Best Friend section -->
+    <section>
+      <div class="max-w-6xl mx-auto p-20">
+        <h1 class="text-3xl font-bold text-center mb-2">
+          Adopt Your Best Friend
+        </h1>
+        <p class="text-black text-center mb-6">
+          It's a well-known fact that readers are often distracted by a page's
+          layout, as the visual arrangement <br />draws more attention than the
+          actual content.
+        </p>
+
+        <div class="flex justify-between items-center mb-10 space-x-4">
+          <button
+            class="btn btn-outline flex-1 h-24 text-2xl flex items-center justify-center transition-all duration-300 focus:rounded-full active:rounded-full"
+          >
+            <span class="mr-4 text-4xl">🐶</span> Dogs
+          </button>
+          <button
+            class="btn btn-outline flex-1 h-24 text-2xl flex items-center justify-center transition-all duration-300 focus:rounded-full active:rounded-full"
+          >
+            <span class="mr-4 text-4xl">🐱</span> Cats
+          </button>
+          <button
+            class="btn btn-outline flex-1 h-24 text-2xl flex items-center justify-center transition-all duration-300 focus:rounded-full active:rounded-full"
+          >
+            <span class="mr-4 text-4xl">🐇</span> Rabbits
+          </button>
+          <button
+            class="btn btn-outline flex-1 h-24 text-2xl flex items-center justify-center transition-all duration-300 focus:rounded-full active:rounded-full"
+          >
+            <span class="mr-4 text-4xl">🦜</span> Birds
+          </button>
+        </div>
+
+        <div class="text-center flex justify-between items-center mx-auto">
+          <p class="text-black text-xl font-bold">Best Deal For you</p>
+          <button
+            class="btn btn-outline text-xl flex items-center justify-center transition-all focus:rounded-full active:rounded-full bg-teal-600 px-6 text-white"
+          >
+            Sort by Price
+          </button>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
