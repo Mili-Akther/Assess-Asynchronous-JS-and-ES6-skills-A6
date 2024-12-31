@@ -23,21 +23,25 @@ const DisplayPets = (pets) => {
     const petContainer = document.createElement("div");
      petContainer.classList.add("card");
      petContainer.innerHTML = `
-      <figure>
+      <div class="card shadow rounded-lg">
+      <figure class= "p-5 py-5"> 
       <img
         src=${pet.image}
+        class = "rounded-lg object-cover"
         alt="Shoes" />
     </figure>
-    <div class="card-body">
-      <h2 class="card-title">
-        ${pet.name}
-        <div class="badge badge-secondary">NEW</div>
-      </h2>
-      <p>If a dog chews shoes whose shoes does he choose?</p>
-      <div class="card-actions justify-end">
-        <div class="badge badge-outline">Fashion</div>
-        <div class="badge badge-outline">Products</div>
-      </div>
+    <div class="p-5">
+      <h2 class="card-title">${pet.pet_name}</h2>
+          <p class="font thin">Breed: ${pet.breed}</p>
+          <p>Birth: ${pet.date_of_birth}</p>
+          <p>Gender: ${pet.gender}</p>
+          <p>Price: ${pet.price}</p>
+     <div class="card-actions justify-between">
+            <button class="btn text-black text-xl "><i class="fa-regular fa-thumbs-up"></i></button>
+            <button class="btn text-teal-600 text-xl">Adopt</button>
+            <button class="btn text-teal-600 text-xl">Details</button>
+          </div>
+    </div>
     </div>`;
      petsContainer.append(petContainer);
   });
