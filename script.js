@@ -19,7 +19,22 @@ const loadPets = () => {
 // Display pets dynamically
 const displayPets = (pets) => {
   const petsContainer = document.getElementById("pets");
-  petsContainer.innerHTML = ""; // Clear existing pets
+  petsContainer.innerHTML = ""; 
+   if (pets.length == 0) {
+     petsContainer.classList.remove("grid");
+     petsContainer.innerHTML = `
+    <div class="flex flex-col gap-5 justify-center items-center min-h-[300px]"> <img src="images/error.webp" class="" alt="empty">
+    <h2 class="text-center text-5xl font-bold">No Information Available</h2>
+     <p class="text-black text-center mb-6">
+          It's a well-known fact that readers are often distracted by a page's
+          layout, as the visual arrangement <br />draws more attention than the
+          actual content.
+        </p>
+    </div>`;
+     return;
+   } else {
+     petsContainer.classList.add("grid");
+   }
   pets.forEach((pet) => {
     const petContainer = document.createElement("div");
     petContainer.classList.add("card");
