@@ -167,6 +167,77 @@
       </section>
     </main>
 
+
+    <footer class="bg-black text-white py-24">
+  <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-48  ">
+    <!-- Contact Info -->
+    <div>
+      <h2 class="text-2xl font-semibold flex items-center">
+        <span class="mr-2"><img src="images/logo.webp" alt=""></span> Peddy
+      </h2>
+      <p class="mt-4">Location: av. Washington 165, NY CA 54003</p>
+      <p>Phone: +31 85 964 47 25</p>
+      <p>Email: info@yourdomain.com</p>
+      <p>Opening hours: 9:00 AM - 5.00 PM</p>
+      <div class="flex space-x-4 mt-4">
+        <a href="#" class="text-blue-500 text-2xl hover:text-blue-600"><i class=" fa-brands fa-facebook"></i></a>
+        <a href="#" class="text-white text-2xl hover:text-blue-500"><i class="fa-solid fa-x"></i></a>
+        <a href="#" class="text-red-500 text-2xl hover:text-red-600"><i class="fa-brands fa-youtube"></i></i></a>
+        <a href="#" class="text-pink-500 text-2xl hover:text-pink-600"><i class="fa-brands fa-instagram"></i></i></a>
+      </div>
+    </div>
+
+    <!-- Useful Links -->
+    <div>
+      <h2 class="text-xl font-semibold">Useful Links</h2>
+      <ul class="mt-2 space-y-2">
+        <li><a href="#" class="hover:text-gray-300">Home</a></li>
+        <li><a href="#" class="hover:text-gray-300">About Us</a></li>
+        <li><a href="#" class="hover:text-gray-300">Animals</a></li>
+        <li><a href="#" class="hover:text-gray-300">Foundation</a></li>
+        <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Newsletter -->
+    <div>
+      <h2 class="text-xl font-semibold">Drop a Message</h2>
+      <form class="mt-4 flex flex-col">
+        <input 
+          type="email" 
+          placeholder="Enter your email" 
+          class="input input-bordered w-[250px] bg-gray-800 placeholder-gray-400 text-white"
+        />
+        <button 
+          type="submit" 
+          class="btn btn-primary w-[250px] mt-4 bg-teal-600 hover:bg-teal-700 border-none">
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Open the modal using ID.showModal() method -->
+<button id="showModalData" class="btn hidden" onclick="customModal.showModal()">open modal</button>
+<dialog id="customModal" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+   <div id="modal-content">
+
+   </div>
+    <div class="modal-action">
+      <form method="dialog"  class="w-full">
+        <!-- if there is a button in form, it will close the modal -->
+        <button class="btn w-full mt-4  text-teal-600 text-xl border-none ">
+          Cancel</button>
+      </form>
+    </div>
+  </div>
+</dialog>
+
+
+
     <script src="script.js"></script>
   </body>
 </html>

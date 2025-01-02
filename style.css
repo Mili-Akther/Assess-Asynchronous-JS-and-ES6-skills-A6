@@ -1,0 +1,6 @@
+.active {
+  background-color: #4caf50 !important ; /* Green background */
+  color: white !important ; /* White text */
+  border: none !important ; /* No border */
+
+}

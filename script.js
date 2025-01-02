@@ -16,6 +16,39 @@ const loadPets = () => {
     .catch((err) => console.error(err));
 };
 
+
+// detail btn click korle details dekhabe
+const loadDetails = async (petId) => {
+  const uri =`https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
+  const res = await fetch(uri);
+  const data = await res.json();
+  console.log(data);
+  displayDetails(data.petData);
+};
+
+// Display pet details
+const displayDetails = (pet) => {
+    console.log(pet); 
+  const detailsContainer = document.getElementById("modal-content");
+  detailsContainer.innerHTML = `
+    <img src="${pet.image}" class = "w-full" />
+    <h2 class="card-title">${pet.pet_name}</h2>
+    <div class="grid grid-cols-2 gap-2 text-sm">
+          <p>Birth: ${pet.date_of_birth}</p>
+          <p>Breed: ${pet.breed}</p>        
+          <p>Gender: ${pet.gender}</p>
+          <p>Vaccinated: ${pet.vaccinated_status}</p>
+          <p>Price: $${pet.price}</p>         
+    </div>
+    <div class="mt-5">
+       <h3 class="text-sm font-semibold">Details Information</h3>
+    <p class="">${pet.pet_details}</p>
+    </div>
+  `;
+  // document.getElementById("showModalData").click();
+  document.getElementById("customModal").showModal();
+};
+
 // Display pets dynamically
 const displayPets = (pets) => {
   const petsContainer = document.getElementById("pets");
@@ -44,7 +77,7 @@ const displayPets = (pets) => {
           <img
             src="${pet.image}"
             class="rounded-lg object-cover"
-            alt="${pet.pet_name}" />
+            alt="" />
         </figure>
         <div class="p-5">
           <h2 class="card-title">${pet.pet_name}</h2>
@@ -55,11 +88,12 @@ const displayPets = (pets) => {
           <div class="card-actions justify-between">
             <button class="btn text-black text-xl"><i class="fa-regular fa-thumbs-up"></i></button>
             <button class="btn text-teal-600 text-xl">Adopt</button>
-            <button class="btn text-teal-600 text-xl">Details</button>
+           <button onclick="loadDetails('${pet.petId}')" class="btn text-teal-600 text-xl">Details</button>
+
           </div>
         </div>
       </div>`;
-    petsContainer.appendChild(petContainer);
+    petsContainer.append(petContainer);
   });
 };
 
@@ -72,6 +106,7 @@ const filterPetsByCategory = (category) => {
       displayPets(filteredPets);
     })
     .catch((err) => console.error(err));
+    
 };
 
 // Attach event listeners to category buttons
