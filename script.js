@@ -86,7 +86,9 @@ const displayPets = (pets) => {
           <p>Gender: ${pet.gender}</p>
           <p>Price: $${pet.price}</p>
           <div class="card-actions justify-between">
-            <button class="btn text-black text-xl"><i class="fa-regular fa-thumbs-up"></i></button>
+            <button onclick="markAsImage('${pet.image}')"
+            class="btn text-black text-xl"><i class="fa-regular fa-thumbs-up">
+            </i></button>
             <button class="btn text-teal-600 text-xl">Adopt</button>
            <button onclick="loadDetails('${pet.petId}')" class="btn text-teal-600 text-xl">Details</button>
 
@@ -95,6 +97,22 @@ const displayPets = (pets) => {
       </div>`;
     petsContainer.append(petContainer);
   });
+};
+// Display categories images
+const markAsImage = (image) => {
+  const markAsImageContainer = document.getElementById("markAsImageContainer");
+  const div = document.createElement("div");
+  div.innerHTML = `
+ 
+            <img
+              src="${image}"
+              class="rounded-lg object-cover"
+              alt=""
+            />
+           
+  `;
+  markAsImageContainer.appendChild(div);
+  ;
 };
 
 // Filter pets based on category
