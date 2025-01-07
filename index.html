@@ -89,52 +89,60 @@
       </div>
     </header>
     <!-- Adopt  Your  Best Friend section -->
-    <section id="Adopt">
-      <div class="max-w-8xl mx-auto p-48 py-12">
-        <h1 class="text-3xl font-bold text-center mb-2">
-          Adopt Your Best Friend
-        </h1>
-        <p class="text-black text-center mb-6">
-          It's a well-known fact that readers are often distracted by a page's
-          layout, as the visual arrangement <br />draws more attention than the
-          actual content.
-        </p>
-        <div  onclick="ButtonClick()"
-          class="flex justify-between items-center mb-8 space-x-24  " 
-        >
-          <button   id="dogs-btn" 
-            class="btn btn-outline h-24 flex-1 text-2xl flex items-center justify-center transition-all duration-200 focus:rounded-full active:rounded-full"
-          >
-            <span class="text-4xl">🐶</span> Dogs
-          </button>
-          <button id="cats-btn"
-            class="btn btn-outline h-24 flex-1 text-2xl flex items-center justify-center transition-all duration-300 focus:rounded-full active:rounded-full"
-          >
-            <span class="text-4xl">🐱</span> Cats
-          </button>
-          <button  id="rabbits-btn" 
-            class="btn btn-outline h-24 flex-1 text-2xl flex items-center justify-center transition-all duration-300 focus:rounded-full active:rounded-full"
-          >
-            <span class="text-4xl">🐇</span> Rabbits
-          </button>
-          <button id="birds-btn"
-            class="btn btn-outline h-24 text-2xl flex-1 flex items-center justify-center transition-all duration-300 focus:rounded-full active:rounded-full"
-          >
-            <span class="text-4xl">🦜</span> Birds
-          </button>
-        </div>
-        <div class="text-center flex justify-between items-center mx-auto">
-          <p class="text-black text-xl font-bold">Best Deal For you</p>
-          <button
-            class="btn btn-outline text-xl flex items-center justify-center transition-all focus:rounded-full active:rounded-full bg-teal-600 px-6 text-white"
-          >
-            Sort by Price
-          </button>
-        </div>
-        <!-- spinner style  -->
-        <div  id="spinner"  class="grid place-items-center mx-[700px] h-48">  <span class="loading loading-bars loading-md  w-16 h-16"></span></div>
-      </div>
-    </section>
+  <section id="Adopt">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 py-12">
+    <h1 class="text-3xl font-bold text-center mb-4">
+      Adopt Your Best Friend
+    </h1>
+    <p class="text-black text-center mb-8">
+      It's a well-known fact that readers are often distracted by a page's
+      layout, as the visual arrangement <br class="hidden md:block" />draws more attention than the
+      actual content.
+    </p>
+    <div 
+      onclick="ButtonClick()"
+      class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 mb-8"
+    >
+      <button 
+        id="dogs-btn" 
+        class="btn btn-outline h-24 text-2xl flex items-center justify-center transition-all duration-200 focus:rounded-full active:rounded-full"
+      >
+        <span class="text-4xl">🐶</span> Dogs
+      </button>
+      <button 
+        id="cats-btn"
+        class="btn btn-outline h-24 text-2xl flex items-center justify-center transition-all duration-300 focus:rounded-full active:rounded-full"
+      >
+        <span class="text-4xl">🐱</span> Cats
+      </button>
+      <button 
+        id="rabbits-btn" 
+        class="btn btn-outline h-24 text-2xl flex items-center justify-center transition-all duration-300 focus:rounded-full active:rounded-full"
+      >
+        <span class="text-4xl">🐇</span> Rabbits
+      </button>
+      <button 
+        id="birds-btn"
+        class="btn btn-outline h-24 text-2xl flex items-center justify-center transition-all duration-300 focus:rounded-full active:rounded-full"
+      >
+        <span class="text-4xl">🦜</span> Birds
+      </button>
+    </div>
+    <div class="flex flex-col md:flex-row justify-between items-center mx-auto text-center space-y-4 md:space-y-0">
+      <p class="text-black text-xl font-bold">Best Deal For You</p>
+      <button
+        class="btn btn-outline text-xl flex items-center justify-center transition-all focus:rounded-full active:rounded-full bg-teal-600 px-6 text-white"
+      >
+        Sort by Price
+      </button>
+    </div>
+    <!-- spinner style -->
+    <div id="spinner" class="grid place-items-center h-48">
+      <span class="loading loading-bars loading-md w-16 h-16"></span>
+    </div>
+  </div>
+</section>
+
 
     <!-- Main Content -->
 
@@ -166,8 +174,8 @@
     </main>
 
 
-    <footer class="bg-black text-white py-24">
-  <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-48  ">
+   <footer class="bg-black text-white py-24 px-6 md:px-12">
+  <div class="container mx-auto grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3">
     <!-- Contact Info -->
     <div>
       <h2 class="text-2xl font-semibold flex items-center">
@@ -178,10 +186,10 @@
       <p>Email: info@yourdomain.com</p>
       <p>Opening hours: 9:00 AM - 5.00 PM</p>
       <div class="flex space-x-4 mt-4">
-        <a href="#" class="text-blue-500 text-2xl hover:text-blue-600"><i class=" fa-brands fa-facebook"></i></a>
+        <a href="#" class="text-blue-500 text-2xl hover:text-blue-600"><i class="fa-brands fa-facebook"></i></a>
         <a href="#" class="text-white text-2xl hover:text-blue-500"><i class="fa-solid fa-x"></i></a>
-        <a href="#" class="text-red-500 text-2xl hover:text-red-600"><i class="fa-brands fa-youtube"></i></i></a>
-        <a href="#" class="text-pink-500 text-2xl hover:text-pink-600"><i class="fa-brands fa-instagram"></i></i></a>
+        <a href="#" class="text-red-500 text-2xl hover:text-red-600"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#" class="text-pink-500 text-2xl hover:text-pink-600"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
 
@@ -204,17 +212,19 @@
         <input 
           type="email" 
           placeholder="Enter your email" 
-          class="input input-bordered w-[250px] bg-gray-800 placeholder-gray-400 text-white"
+          class="input input-bordered w-full md:w-[250px] bg-gray-800 placeholder-gray-400 text-white"
         />
         <button 
           type="submit" 
-          class="btn btn-primary w-[250px] mt-4 bg-teal-600 hover:bg-teal-700 border-none">
+          class="btn btn-primary w-full md:w-[250px] mt-4 bg-teal-600 hover:bg-teal-700 border-none">
           Subscribe
         </button>
       </form>
     </div>
   </div>
 </footer>
+
+
 
 
 <!-- Open the modal using ID.showModal() method -->
