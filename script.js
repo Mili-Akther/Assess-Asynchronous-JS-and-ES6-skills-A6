@@ -57,7 +57,11 @@ const displayPets = (pets) => {
             <button onclick="markAsImage('${pet.image}')" class="btn text-black text-xl">
               <i class="fa-regular fa-thumbs-up"></i>
             </button>
-            <button class="btn text-teal-600 text-xl">Adopt</button>
+
+
+           <button   onclick="adoptPet(this)" class="btn adopt-btn text-teal-600 text-xl">Adopt</button>
+
+            
             <button onclick="loadDetails('${pet.petId}')" class="btn text-teal-600 text-xl">Details</button>
           </div>
         </div>
@@ -67,6 +71,41 @@ const displayPets = (pets) => {
 
   document.getElementById("spinner").style.display = "none";
 };
+
+
+// Function to show the notification popup
+const showNotification = () => {
+  const notification = document.getElementById("notification");
+  notification.classList.remove("hidden");
+};
+
+// Function to handle the "Adopt" button click
+const adoptPet = (button) => {
+  showNotification();
+
+  const countdownDisplay = document.getElementById("countdownDisplay");
+  let countdown = 3;
+
+  button.disabled = true;
+
+  const countdownInterval = setInterval(() => {
+    if (countdown > 0) {
+      countdownDisplay.textContent = countdown; 
+      countdown--;
+    } else {
+      clearInterval(countdownInterval);
+      button.textContent = "Adopted";
+      button.classList.add("adopted");
+      setTimeout(() => {
+        const notification = document.getElementById("notification");
+        notification.classList.add("hidden"); 
+      }, 2000); 
+    }
+  }, 1000);
+};
+
+
+
 
 // Filter pets based on category with a 2-second spinner delay
 const filterPetsByCategory = (category) => {
@@ -143,6 +182,34 @@ const displayDetails = (pet) => {
   `;
   document.getElementById("customModal").showModal();
 };
+
+
+
+// Select all "Adopt" buttons
+const adoptButtons = document.querySelectorAll('.adopt-btn');
+
+// Function to handle the adoption process
+adoptButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    let countdown = 3; // Start the countdown from 3
+    const originalText = button.textContent; // Store the original button text
+
+    // Disable the button during the process
+    button.disabled = true;
+
+    // Create a countdown interval
+    const countdownInterval = setInterval(() => {
+      if (countdown > 0) {
+        button.textContent = countdown; // Show the countdown on the button
+        countdown--;
+      } else {
+        clearInterval(countdownInterval); // Clear the interval when the countdown ends
+        button.textContent = 'Adopted'; // Update the button text to "Adopted"
+        button.classList.add('adopted'); // Optional: Add a CSS class for styling
+      }
+    }, 1000); // Update every 1 second
+  });
+});
 
 
 loadCategories();
