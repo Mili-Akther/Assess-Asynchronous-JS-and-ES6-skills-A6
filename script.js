@@ -42,6 +42,7 @@ const displayPets = (pets) => {
   pets.forEach((pet) => {
     const petContainer = document.createElement("div");
     petContainer.classList.add("card");
+  
     petContainer.innerHTML = `
       <div class="card shadow rounded-lg">
         <figure class="p-5 py-5">
@@ -52,7 +53,7 @@ const displayPets = (pets) => {
           <p>Breed: ${pet.breed}</p>
           <p>Birth: ${pet.date_of_birth}</p>
           <p>Gender: ${pet.gender}</p>
-          <p>Price: $${pet.price}</p>
+          <p>Price: ${pet.price}</p>
           <div class="card-actions justify-between">
             <button onclick="markAsImage('${pet.image}')" class="btn text-black text-xl">
               <i class="fa-regular fa-thumbs-up"></i>
@@ -188,27 +189,11 @@ const displayDetails = (pet) => {
 // Select all "Adopt" buttons
 const adoptButtons = document.querySelectorAll('.adopt-btn');
 
-// Function to handle the adoption process
-adoptButtons.forEach((button) => {
-  button.addEventListener('click', () => {
-    let countdown = 3; // Start the countdown from 3
-    const originalText = button.textContent; // Store the original button text
 
-    // Disable the button during the process
-    button.disabled = true;
-
-    // Create a countdown interval
-    const countdownInterval = setInterval(() => {
-      if (countdown > 0) {
-        button.textContent = countdown; // Show the countdown on the button
-        countdown--;
-      } else {
-        clearInterval(countdownInterval); // Clear the interval when the countdown ends
-        button.textContent = 'Adopted'; // Update the button text to "Adopted"
-        button.classList.add('adopted'); // Optional: Add a CSS class for styling
-      }
-    }, 1000); // Update every 1 second
-  });
+// Smooth scroll to "Adopt Your Best Friend" section
+document.getElementById("viewMoreBtn").addEventListener("click", () => {
+  const adoptSection = document.getElementById("adoptSection");
+  adoptSection.scrollIntoView({ behavior: "smooth" });
 });
 
 
